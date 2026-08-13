@@ -1,0 +1,22 @@
+{
+  "all_cluster_losses_in_analytic_interval": true,
+  "alpha_search_performed_on_test": false,
+  "caption_count": 127352,
+  "certificate_bound_bits_per_token": 5.798641912895223,
+  "certificate_margin_above_test_interval_upper": 1.490632715106523,
+  "confidence_interval_lower_bits_per_token": 4.139964867922276,
+  "confidence_interval_upper_bits_per_token": 4.3080091977887,
+  "correct_token_count": 31804130,
+  "coverage_classification": "strong_support",
+  "empirical_test_risk_bits_per_token": 4.223987032855488,
+  "fixed_alpha_fraction": "1/8",
+  "hoeffding_radius_bits_per_token": 0.08402216493321178,
+  "locked_test_result_manifest_sha256": "fefd62bf78d81cb980cd390565010f75868d65c8d58e6a6d95bda72197f1af56",
+  "model_updated_after_test_unlock": false,
+  "schema_version": 1,
+  "status": "locked_test_result_independently_recomputed_and_verified",
+  "test_cluster_count": 62374,
+  "test_cluster_manifest_sha256": "8f9cc54d0f6cecd739c2e92905631e12d0f6753d691595db408b90e1e64364cf",
+  "test_minus_certificate_empirical_bits_per_token": -0.003359108057636284,
+  "train_test_cluster_intersection": 0
+}

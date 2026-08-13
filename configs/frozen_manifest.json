@@ -1,0 +1,64 @@
+{
+  "dataset_sha256": "65761f37d1947d54a1d85457ff70938275e4ef58ba5cedcd02463a3a247c93fd",
+  "experiment_registry_sha256": "8a5358cc5941bf698f0e1bf7653491c5d93ce3b24c121b15d9833b8e5d663baa",
+  "llm_checkpoint_sha256": "5b8c49f6c9d965092e651cafeeaeb8705558632b3fd4ac8ab319cbc5a3cbc4a0",
+  "minimind_v_git_commit": "740d467ece78a0b7d2d976fcb424472095d4a688",
+  "parameter_name_and_shape_list": [
+    [
+      "mlp.0.weight",
+      [
+        768
+      ]
+    ],
+    [
+      "mlp.0.bias",
+      [
+        768
+      ]
+    ],
+    [
+      "mlp.1.weight",
+      [
+        768,
+        768
+      ]
+    ],
+    [
+      "mlp.1.bias",
+      [
+        768
+      ]
+    ],
+    [
+      "mlp.3.weight",
+      [
+        768,
+        768
+      ]
+    ],
+    [
+      "mlp.3.bias",
+      [
+        768
+      ]
+    ]
+  ],
+  "projector_init_seed": 20260813,
+  "schema_version": 1,
+  "software": {
+    "datasets": "3.6.0",
+    "numpy": "1.26.4",
+    "pyarrow": "23.0.0",
+    "python": "3.11.15",
+    "torch": "2.7.1+cu128",
+    "torch_cuda": "12.8",
+    "transformers": "4.57.6"
+  },
+  "status": "artifacts_frozen_before_dataset_content_access",
+  "sublora_bounds_git_commit": "c606ea664e54fe60cfd870167bf6d1c1183fedf1",
+  "subspace_seed": 137,
+  "tokenizer_sha256": "1376b1dcd04921e6d5a98d0a9d2b73776da05119aadd5bb1a5a8d5ceeaa07593",
+  "vision_checkpoint_sha256": "c1e9cc19ed6704b87353ee00b9ff5d6191886d741898339984364f789c62810d",
+  "vision_config_sha256": "5ad8dda7d55541c7749f9b1cc43fe8eb8c70d8664588d89f710242ce06b3167e",
+  "vision_processor_config_sha256": "d14ba2ee3fd816f3de8abaddc31953565128eaf37c73ad4bed32101a98465aff"
+}

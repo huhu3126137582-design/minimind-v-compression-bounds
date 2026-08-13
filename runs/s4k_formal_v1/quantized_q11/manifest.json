@@ -1,0 +1,118 @@
+{
+  "certificate_sample_seed": null,
+  "compressed_model_descriptor": {
+    "configuration_id": "S-4K",
+    "frozen_manifest_sha256": "9730851debc9091c215c4d66ae8eb6908e257660e0f18e11fdd0083cc3fae773",
+    "implementation_contract_sha256": "51a070736d9ea697b682bc2a74aee8dbb44008ea8d92c005ee77ffa194444672",
+    "intrinsic_dimension": 4096,
+    "levels": 11,
+    "parameterization": "subspace",
+    "projector_init_manifest_sha256": "bb7deb2fdde88da5bd79c42fa96ac476d4ab82c4e4fef9e103d530358f3b65e5",
+    "quantization_algorithm_version": "equal-width-bin-means-fp16-nearest-v1",
+    "schema_version": 1,
+    "subspace_seed": 137
+  },
+  "description_length": {
+    "C_VLM_raw_upper_bits": 11062,
+    "K_VLM_upper_bits": 11089,
+    "codebook_bits": 176,
+    "count_bits": 143,
+    "count_bits_per_symbol": 13,
+    "counts": [
+      1,
+      27,
+      137,
+      466,
+      869,
+      1087,
+      876,
+      445,
+      144,
+      40,
+      4
+    ],
+    "d_times_empirical_entropy_bits": 10741.596108081962,
+    "dimension": 4096,
+    "empirical_symbol_entropy_bits_per_symbol": 2.6224599873246977,
+    "levels": 11,
+    "prefix_overhead_upper_bits": 27,
+    "probabilities": [
+      0.000244140625,
+      0.006591796875,
+      0.033447265625,
+      0.11376953125,
+      0.212158203125,
+      0.265380859375,
+      0.2138671875,
+      0.108642578125,
+      0.03515625,
+      0.009765625,
+      0.0009765625
+    ],
+    "structure_choice_bits": 0,
+    "symbol_entropy_code_upper_bits": 10743,
+    "version": "empirical-arithmetic-upper-elias-gamma-v1"
+  },
+  "files": {
+    "assignments_sha256": "d8fe60c1060d91a72e4e8ea2269e33b9863e8414fe794a2447ba8d5179511900",
+    "centers_sha256": "039390ded17b32d5e061664cdf4d5be75e82c43263d152917c0298e99d1e9e65",
+    "counts_sha256": "4e414ff9953f6a2cd59dfebb0e072b488d9c5165d078a30212254251bf1308b5",
+    "reconstructed_u_sha256": "5a772d5fae607397e64a9181083162e6fb5d6b8df710c4fb301eb47b5d243185"
+  },
+  "hashes": {
+    "compressed_model_sha256": "5c225f5a141351f9b4b065179f2f52a18383b734d3631040dc4db6ad9244c4e8",
+    "materialized_projector_parameters_sha256": "4f0fd763b5e30f38d35ad0789ccc57200165a0eb472c2f3c8a455955dcbd2618",
+    "projector_initialization_sha256": "c435551c80046539a99785678c9ad48f69d784c441b51abc4ee44a3f07d8c23b",
+    "quantized_hypothesis_sha256": "da0a9f5dfc4198c38f97977a9c980686f5bf2772aaf9706055d87c11be67d3af",
+    "reconstructed_coordinate_sha256": "2c57d4df43722bf0764b740a14256dd2e1f46f899c24c538e863b431aef75b49"
+  },
+  "quantization": {
+    "algorithm_version": "equal-width-bin-means-fp16-nearest-v1",
+    "assignment_dtype": "uint16",
+    "assignments_changed_after_fp16_cast": 137,
+    "center_dtype": "float16",
+    "centers": [
+      -1.2255859375,
+      -0.857421875,
+      -0.65283203125,
+      -0.431884765625,
+      -0.2161865234375,
+      0.00128173828125,
+      0.2198486328125,
+      0.437255859375,
+      0.64208984375,
+      0.85400390625,
+      1.0498046875
+    ],
+    "coordinate_max_abs_error": 0.12439471483230591,
+    "coordinate_mse": 0.003848800454806702,
+    "counts": [
+      1,
+      27,
+      137,
+      466,
+      869,
+      1087,
+      876,
+      445,
+      144,
+      40,
+      4
+    ],
+    "dimension": 4096,
+    "levels": 11,
+    "qat_enabled": false,
+    "recompute_assignments_after_fp16_cast": true,
+    "tie_break": "lowest_center_index"
+  },
+  "schema_version": 1,
+  "source": {
+    "experiment_registry_sha256": "8a5358cc5941bf698f0e1bf7653491c5d93ce3b24c121b15d9833b8e5d663baa",
+    "formal_checkpoint": "runs/s4k_formal_v1/final.pt",
+    "formal_checkpoint_sha256": "af53b1e5e8b231a7b21683f9611dfd63087ef03411be9df91d90debf0d00ee5a",
+    "formal_coordinate_sha256": "faf5c36637a82507e6215191bbc7b00eb93f8152197d79e3bffe84e00820a9ec",
+    "frozen_manifest_sha256": "9730851debc9091c215c4d66ae8eb6908e257660e0f18e11fdd0083cc3fae773",
+    "implementation_contract_sha256": "51a070736d9ea697b682bc2a74aee8dbb44008ea8d92c005ee77ffa194444672"
+  },
+  "status": "quantized_model_frozen_before_certificate_sampling"
+}

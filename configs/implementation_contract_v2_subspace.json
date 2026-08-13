@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "status": "prospectively_frozen_before_v2_new_model_training",
+  "parameterization": "Projector Subspace",
+  "projector_full_dimension": 1182720,
+  "projection": {
+    "algorithm": "RoundedDoubleKronQR",
+    "algorithm_version": "pinned-sublora-c606ea6-order2-functional-v1",
+    "seed": 137,
+    "order": 2,
+    "rounded_output": 1087,
+    "main_output_dimension": 1181569,
+    "fixed_zero_output_coordinates_before_permutation": 1151,
+    "dense_D_by_d_matrix_materialized": false,
+    "configurations": {
+      "S-1K": {
+        "intrinsic_dimension": 1024,
+        "rounded_input": 32,
+        "main_input_dimension": 1024,
+        "tail_input_dimension": 0
+      },
+      "S-4K": {
+        "intrinsic_dimension": 4096,
+        "rounded_input": 64,
+        "main_input_dimension": 4096,
+        "tail_input_dimension": 0
+      },
+      "S-16K": {
+        "intrinsic_dimension": 16384,
+        "rounded_input": 128,
+        "main_input_dimension": 16384,
+        "tail_input_dimension": 0
+      }
+    },
+    "parameter_application": "torch.func.functional_call_without_parameter_mutation"
+  },
+  "training": {
+    "epochs": 2,
+    "world_size": 2,
+    "per_rank_batch_size": 16,
+    "global_batch_size": 32,
+    "drop_last": true,
+    "steps_per_epoch": 35854,
+    "total_steps": 71708,
+    "deterministic_algorithms": true,
+    "cublas_workspace_config": ":4096:8",
+    "ddp_broadcast_buffers": false,
+    "ddp_init_sync": false
+  },
+  "description_length": {
+    "candidate_count": 3,
+    "fixed_length_candidate_id_bits": 2,
+    "quantization_levels": 11,
+    "center_bits": 16,
+    "count_table_entries": 11
+  },
+  "statistical_control": {
+    "model_count": 3,
+    "shared_fresh_certificate_sample_after_all_models_fixed": true,
+    "second_layer_formula": "ln(M/delta_subsample)",
+    "old_v1_test_is_not_blind_for_v2": true
+  }
+}
+

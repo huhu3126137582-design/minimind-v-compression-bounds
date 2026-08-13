@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "algorithm": "torch.manual_seed_then_full_MiniMindVLM_constructor_at_pinned_versions",
+  "seed": 20260813,
+  "canonical_hash_algorithm": "sha256_over_name_length_name_json_shape_and_contiguous_tensor_bytes_in_state_dict_order",
+  "canonical_state_sha256": "c435551c80046539a99785678c9ad48f69d784c441b51abc4ee44a3f07d8c23b",
+  "total_parameters": 1182720,
+  "parameters": [
+    {"name": "mlp.0.weight", "shape": [768], "dtype": "float32", "numel": 768},
+    {"name": "mlp.0.bias", "shape": [768], "dtype": "float32", "numel": 768},
+    {"name": "mlp.1.weight", "shape": [768, 768], "dtype": "float32", "numel": 589824},
+    {"name": "mlp.1.bias", "shape": [768], "dtype": "float32", "numel": 768},
+    {"name": "mlp.3.weight", "shape": [768, 768], "dtype": "float32", "numel": 589824},
+    {"name": "mlp.3.bias", "shape": [768], "dtype": "float32", "numel": 768}
+  ]
+}

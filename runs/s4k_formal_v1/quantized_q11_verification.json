@@ -1,0 +1,20 @@
+{
+  "K_VLM_upper_bits": 11089,
+  "artifact_manifest_sha256": "8430ab2d073269742df13ef25d0365a8c3e171c333701b13bc9ed9901f011f09",
+  "certificate_sample_seed": null,
+  "compressed_model_sha256": "5c225f5a141351f9b4b065179f2f52a18383b734d3631040dc4db6ad9244c4e8",
+  "formal_checkpoint_sha256": "af53b1e5e8b231a7b21683f9611dfd63087ef03411be9df91d90debf0d00ee5a",
+  "locked_test_accessed": false,
+  "materialized_projector_parameters_sha256": "4f0fd763b5e30f38d35ad0789ccc57200165a0eb472c2f3c8a455955dcbd2618",
+  "reconstructed_coordinate_sha256": "2c57d4df43722bf0764b740a14256dd2e1f46f899c24c538e863b431aef75b49",
+  "schema_version": 1,
+  "status": "verified_without_certificate_or_locked_test_access",
+  "training_smoke_sample": {
+    "caption_index": 0,
+    "prequantized_loss_nats_per_token": 2.6850509643554688,
+    "quantized_loss_nats_per_token": 2.727626085281372,
+    "quantized_minus_prequantized_loss": 0.04257512092590332,
+    "row_index": 0,
+    "valid_label_count": 271
+  }
+}

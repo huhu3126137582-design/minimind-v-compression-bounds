@@ -1,0 +1,6 @@
+[submodule "upstream/minimind-v"]
+	path = upstream/minimind-v
+	url = https://github.com/jingyaogong/minimind-v.git
+[submodule "upstream/SubLoRA-bounds-for-LLMs"]
+	path = upstream/SubLoRA-bounds-for-LLMs
+	url = https://github.com/Sanaelotfi/SubLoRA-bounds-for-LLMs.git

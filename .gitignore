@@ -1,0 +1,28 @@
+.venv/
+.uv-python/
+.cache/
+
+# Downloaded immutable artifacts
+model/
+dataset/raw/
+dataset/features/
+
+# Local/generated artifacts that are too large for ordinary GitHub storage
+results/
+dataset/clusters/
+runs/s4k_formal_v1/locked_test_evaluation/correct_token_log_probabilities.npy
+
+# Python/editor artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+.idea/
+.vscode/
+*.egg-info/
+
+# Nested repositories are published as pinned Git submodules.
+upstream/*/.git/
+
+# Keep directory placeholders
+!.gitkeep

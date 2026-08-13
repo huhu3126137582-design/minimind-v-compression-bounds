@@ -1,0 +1,13 @@
+{
+  "all_indices_in_range": true,
+  "duplicate_draw_count": 93,
+  "locked_test_accessed": false,
+  "population_size": 561359,
+  "sample_manifest_sha256": "854b3af67a823704ad6205bbf57bfcae91a5c9b609ec0e477400f9d16aef544d",
+  "sample_size": 10000,
+  "sampled_cluster_mapping_verified": true,
+  "sampling_commitment_sha256": "ae2a773288b89c5a11cb6593108e711e0b83e02af9027a30af847900f7f71112",
+  "schema_version": 1,
+  "status": "independent_replay_verified",
+  "unique_cluster_count": 9907
+}

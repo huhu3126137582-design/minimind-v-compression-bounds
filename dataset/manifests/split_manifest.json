@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "dataset_sha256": "65761f37d1947d54a1d85457ff70938275e4ef58ba5cedcd02463a3a247c93fd",
+  "normalization_version": "exif-transpose_rgb_width-height-pixels_v1",
+  "near_duplicate_detection": false,
+  "source_rows": 1274698,
+  "rejected_rows": 0,
+  "unique_image_clusters": 623733,
+  "rng": "numpy_pcg64",
+  "split_seed": 20260814,
+  "ordering_before_shuffle": "ascending_cluster_sha256",
+  "train_fraction": 0.9,
+  "train_clusters": 561359,
+  "train_manifest": "dataset/manifests/train_clusters.jsonl",
+  "train_manifest_sha256": "17c03e0c7bc79d0f49f27b377135907cdc6f6f5fe62f7c9c53eaf99368e54018",
+  "test_clusters": 62374,
+  "test_manifest": "dataset/locked_test/test_clusters.jsonl",
+  "test_manifest_sha256": "8f9cc54d0f6cecd739c2e92905631e12d0f6753d691595db408b90e1e64364cf",
+  "test_unlock_condition": "quantized_model_hash_K_alpha_and_certificate_are_final"
+}

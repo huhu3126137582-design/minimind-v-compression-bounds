@@ -1,0 +1,15 @@
+{
+  "all_cluster_losses_in_analytic_interval": true,
+  "certificate_bound_bits_per_token": 5.7986419128952225,
+  "certificate_manifest_sha256": "06dea5ea5f07f26c2a12bea2a8f77bf517098acc6c086f25819eef63b353daa3",
+  "certificate_strictly_below_uniform": true,
+  "complete_dyadic_search_replayed": true,
+  "empirical_risk_bits_per_token": 4.227346140913124,
+  "locked_test_accessed": false,
+  "model_complexity_term_bits_per_token": 1.2790544802132542,
+  "schema_version": 1,
+  "selected_alpha_fraction": "1/8",
+  "status": "certificate_independently_recomputed_and_verified",
+  "subsample_complexity_term_bits_per_token": 0.2922412917688443,
+  "uniform_predictor_bits_per_token": 12.643856189774725
+}

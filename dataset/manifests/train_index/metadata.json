@@ -1,0 +1,10 @@
+{
+  "caption_examples": 1147346,
+  "caption_indices_dtype": "uint16",
+  "caption_indices_sha256": "9e205eb1eeae893fdc84771f1636d8d98c3a14f3c30ef3e0fcded895b85198a3",
+  "distinct_source_rows": 1147346,
+  "row_indices_dtype": "uint32",
+  "row_indices_sha256": "00813db09169695f87cf1fc560ff79954ccf996eeaf24d4d4b6754c0022193ed",
+  "schema_version": 1,
+  "train_manifest_sha256": "17c03e0c7bc79d0f49f27b377135907cdc6f6f5fe62f7c9c53eaf99368e54018"
+}

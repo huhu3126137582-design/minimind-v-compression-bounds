@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "status": "pending_downloads",
+  "experiment_registry_sha256": null,
+  "minimind_v_git_commit": "740d467ece78a0b7d2d976fcb424472095d4a688",
+  "sublora_bounds_git_commit": "c606ea664e54fe60cfd870167bf6d1c1183fedf1",
+  "vision_checkpoint_sha256": null,
+  "vision_processor_config_sha256": null,
+  "llm_checkpoint_sha256": null,
+  "tokenizer_sha256": null,
+  "dataset_sha256": null,
+  "split_manifest_sha256": null,
+  "projector_init_seed": 20260813,
+  "subspace_seed": 137,
+  "parameter_name_and_shape_list": null,
+  "quantized_model_sha256": null,
+  "certificate_sample_seed": null
+}

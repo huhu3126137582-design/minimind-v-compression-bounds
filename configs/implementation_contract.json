@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "status": "locked_before_formal_training",
+  "structured_projection": {
+    "algorithm": "RoundedDoubleKronQR",
+    "algorithm_version": "pinned-sublora-c606ea6-order2-functional-v1",
+    "reference_commit": "c606ea664e54fe60cfd870167bf6d1c1183fedf1",
+    "full_dimension": 1182720,
+    "intrinsic_dimension": 4096,
+    "seed": 137,
+    "order": 2,
+    "rounded_output": 1087,
+    "rounded_input": 64,
+    "main_output_dimension": 1181569,
+    "main_input_dimension": 4096,
+    "fixed_zero_output_coordinates_before_permutation": 1151,
+    "dense_D_by_d_matrix_materialized": false,
+    "official_reference_S4K_output_bitwise_match": true,
+    "parameter_application": "torch.func.functional_call_without_parameter_mutation"
+  },
+  "prompt_and_labels": {
+    "prompt_format_version": "image64_newline_canonical_user_empty_think_assistant_v1",
+    "user_content": "<|image_pad|> repeated 64 times, newline, then Describe this image.",
+    "assistant_prefix": "chat template generation prefix with open_thinking=false",
+    "label_mask_rule_version": "caption_tokens_plus_im_end_overlap_offsets_v1",
+    "labeled_content": "caption tokens and final <|im_end|> token",
+    "excluded_content": "user prompt, image placeholders, assistant marker, empty think block, trailing newline, padding",
+    "max_sequence_length": 450
+  },
+  "training_data_access": {
+    "allowed_manifest": "dataset/manifests/train_clusters.jsonl",
+    "derived_index": "dataset/manifests/train_index",
+    "locked_test_manifest_rejected_by_training_dataset": true,
+    "caption_examples": 1147346,
+    "distinct_source_rows": 1147346
+  },
+  "formal_training": {
+    "epochs": 2,
+    "steps_per_epoch": 35854,
+    "total_steps": 71708,
+    "caption_examples_available": 1147346,
+    "caption_examples_used_per_epoch": 1147328,
+    "caption_examples_dropped_at_epoch_tail": 18,
+    "drop_last": true,
+    "checkpoint_interval_steps": 1000,
+    "log_interval_steps": 100,
+    "checkpoint_selection": "final_epoch"
+  },
+  "distributed_training": {
+    "world_size": 2,
+    "per_rank_batch_size": 16,
+    "global_batch_size": 32,
+    "deterministic_algorithms": true,
+    "cublas_workspace_config": ":4096:8",
+    "broadcast_buffers": false,
+    "ddp_init_sync": false,
+    "justification": "all ranks reconstruct the hashed frozen base and deterministic Projector; avoids broadcasting frozen parameters; only 4096-dimensional gradients are synchronized",
+    "two_rank_smoke_coordinates_identical_within_run": true,
+    "two_rank_smoke_frozen_parameter_gradients": 0,
+    "two_rank_smoke_peak_cuda_memory_bytes_per_rank": 3309620224
+  }
+}

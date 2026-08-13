@@ -1,0 +1,37 @@
+{
+  "contract": {
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "cublas_workspace_config": ":4096:8",
+    "dataset_size": 1147346,
+    "deterministic_algorithms": true,
+    "drop_last": true,
+    "dtype": "bfloat16",
+    "epochs": 2,
+    "epsilon": 1e-08,
+    "experiment_registry_sha256": "8a5358cc5941bf698f0e1bf7653491c5d93ce3b24c121b15d9833b8e5d663baa",
+    "frozen_manifest_sha256": "9730851debc9091c215c4d66ae8eb6908e257660e0f18e11fdd0083cc3fae773",
+    "global_batch_size": 32,
+    "gradient_clip": 1.0,
+    "implementation_contract_sha256": "51a070736d9ea697b682bc2a74aee8dbb44008ea8d92c005ee77ffa194444672",
+    "intrinsic_dimension": 4096,
+    "learning_rate": 0.0004,
+    "optimizer": "AdamW",
+    "per_rank_batch_size": 16,
+    "sampler_seed": 20260815,
+    "scheduler": "minimind_cosine_v1",
+    "steps_per_epoch": 35854,
+    "subspace_seed": 137,
+    "train_index_metadata_sha256": "71ea36bd3c6bb27437bef2239aabc24e0073a349a526b0ac4fe8e2eab3d5b828",
+    "train_manifest_sha256": "17c03e0c7bc79d0f49f27b377135907cdc6f6f5fe62f7c9c53eaf99368e54018",
+    "training_seed": 20260815,
+    "weight_decay": 0.01,
+    "world_size": 2
+  },
+  "formal_run": true,
+  "max_steps": null,
+  "total_steps": 71708,
+  "trainable_parameters": 4096
+}
