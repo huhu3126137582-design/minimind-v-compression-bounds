@@ -6,10 +6,20 @@
 model/
 dataset/raw/
 dataset/features/
+dataset/clusters/
+dataset/manifests/train_index/*.npy
+
+# Checkpoints and local experiment output
+runs/*
+!runs/.gitkeep
+*.pt
+*.pth
+*.ckpt
+*.npy
+*.npz
 
 # Local/generated artifacts that are too large for ordinary GitHub storage
 results/
-dataset/clusters/
 runs/s4k_formal_v1/locked_test_evaluation/correct_token_log_probabilities.npy
 
 # Python/editor artifacts

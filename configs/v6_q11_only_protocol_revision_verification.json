@@ -1,0 +1,15 @@
+{
+  "all_candidates_use_q11": true,
+  "candidate_count": 9,
+  "candidate_identity_cost_bits": 4,
+  "candidate_lookup_is_bijective": true,
+  "freeze_manifest_sha256": "c907c3953a875f09b79be0e0781b9aa448374c17c6a5b0a82f955f08b65d087d",
+  "fresh_certification_sample_required": true,
+  "heldout_validation_access_prohibited_during_6a": true,
+  "registry_sha256": "c735a065d6e27e7d0d70ed0c8488f0287a996d7ffce802f1a252658ce1749201",
+  "schema_version": 1,
+  "scope_revised_after_training_started": true,
+  "shared_certification_model_count": 9,
+  "status": "v6_q11_only_scope_revision_verified_before_resume",
+  "structure_fields_charged_once": true
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "status": "fixed_after_v6_smoke_before_formal_training",
+  "experiment_id": "minimind_v_bound_compressibility_v6",
+  "candidate_count": 15,
+  "candidate_id_bits": 4,
+  "unused_candidate_id": "1111",
+  "projector_parameter_count": 1182720,
+  "parameterizations": ["subspace", "projector_sublora"],
+  "sublora": {
+    "target_linear_names": ["mlp.1", "mlp.3"],
+    "factor_flatten_order": [
+      "mlp.1.lora_A",
+      "mlp.1.lora_B",
+      "mlp.3.lora_A",
+      "mlp.3.lora_B"
+    ],
+    "environment_dimension_formula": "3072*rank",
+    "lora_scale": 32.0,
+    "factor_init_seed": 20260815,
+    "rank_1_phi0_sha256": "db523f6009b03ad67ec28ecabbb8d5917c2fbfed110ccf65897b456a8a3b6d4c",
+    "rank_4_phi0_sha256": "888ecbd432425055ddc982a148a3b3d56021bf0d38a94e5ee3ed775a1df5dbfb"
+  },
+  "projection": {
+    "family": "RoundedDoubleKronQR",
+    "order": 2,
+    "seed": 137,
+    "algorithm_version": "pinned-sublora-c606ea6-order2-arbitrary-tail-v2",
+    "supports_dimensions": [256, 512, 1024],
+    "non_square_tail": "official_seeded_lazy_random_tail"
+  },
+  "qat": {
+    "version": "coordinate-ste-plus-learned-centers-v1",
+    "starts_at_global_step": 129074,
+    "ends_at_total_steps": 143416,
+    "center_dtype_during_training": "float32",
+    "center_dtype_in_hypothesis": "float16",
+    "center_optimizer_state_at_qat_boundary": "reset_to_empty_before_first_qat_update"
+  },
+  "description_length": {
+    "structure_choice_bits": 4,
+    "structure_fields_double_charged": false
+  }
+}

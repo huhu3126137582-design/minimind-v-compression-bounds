@@ -1,0 +1,153 @@
+schema_version: 1
+registry_status: posthoc_v6_fixed_after_v5_results_before_v6_training
+revision_status: q11_only_scope_reduction_after_v6_training_started
+revised_at: "2026-08-17T10:00:00+08:00"
+registered_at: "2026-08-17T02:00:00+08:00"
+experiment_id: minimind_v_bound_compressibility_v6
+
+scope_and_timing:
+  predecessor_experiment: minimind_v_bound_heldout_validation_v5
+  v5_validation_results_already_observed: true
+  interpretation: posthoc_training_side_compressibility_improvement
+  permitted_claims:
+    - training_side_risk_description_length_pareto_improvement
+    - simultaneous_certificates_for_nine_q11_v6_hypotheses
+  prohibited_claims:
+    - prospective_confirmation_on_the_already_observed_heldout_validation
+    - validation_based_training_quantization_or_candidate_selection
+  scope_revision:
+    reason: user_requested_compute_scope_reduction
+    removed_quantization_levels: [17]
+    retained_quantization_levels: [11]
+    validation_results_consulted_for_revision: false
+    completed_removed_artifacts_are_historical_only: true
+
+frozen_inputs:
+  base_registry: configs/experiment_registry.yaml
+  frozen_manifest: configs/frozen_manifest.json
+  projector_init_manifest: configs/projector_init_manifest.json
+  implementation_contract: configs/implementation_contract_v6_compressibility.json
+  plan: 方案.md
+  plan_sha256_before_v6_implementation: 1e53514716af0a39e4518e5c6b1bbf8353c32637a2269d2b1b7a57628b817419
+  training_contract_registry_sha256: d50d22174d5a0c9ccb9e19d9957d2143d9921cab530df949162bdfa99bb392ec
+  training_contract_trainer_sha256: e5669c17b73d1b9ea015cb6fd7dda805e8a5c3db919d6a96104acd07e30ea940
+  training_contract_registry_sha256: d50d22174d5a0c9ccb9e19d9957d2143d9921cab530df949162bdfa99bb392ec
+  train_manifest: dataset/manifests/train_clusters.jsonl
+  train_index: dataset/manifests/train_index
+  raw_dataset: dataset/raw/pretrain_i2t.parquet
+  v5_analysis_manifest: runs/v5_heldout_validation/analysis/manifest.json
+  v5_analysis_manifest_sha256: af228c285f96d3c02c96aeab741a5b82959c383335685edafb84940043999274
+
+candidate_family:
+  candidate_count: 9
+  candidate_id_bits: 4
+  unused_codewords: ["0100", "0110", "1000", "1010", "1100", "1110", "1111"]
+  candidate_id_uniquely_encodes: [parameterization, lora_rank, intrinsic_dimension, quantization_levels]
+  common_side_information:
+    projector_architecture: pinned_minimind_v_projector
+    target_linear_names: [mlp.1, mlp.3]
+    lora_scale: 32.0
+    train_layernorm: false
+    train_bias: false
+    subspace_seed: 137
+    structured_projection_family: RDKronQR
+    structured_projection_order: 2
+    structured_projection_algorithm_version: pinned-sublora-c606ea6-order2-arbitrary-tail-v2
+    factor_init_seed: 20260815
+  candidates:
+    - {candidate_id: "0000", configuration_id: S-D256-Q11, parameterization: subspace, lora_rank: null, intrinsic_dimension: 256, quantization_levels: 11, output_directory: runs/v6_compressibility/s_d256_q11}
+    - {candidate_id: "0001", configuration_id: S-D512-Q11, parameterization: subspace, lora_rank: null, intrinsic_dimension: 512, quantization_levels: 11, output_directory: runs/v6_compressibility/s_d512_q11}
+    - {candidate_id: "0010", configuration_id: S-D1024-Q11, parameterization: subspace, lora_rank: null, intrinsic_dimension: 1024, quantization_levels: 11, output_directory: runs/v6_compressibility/s_d1024_q11}
+    - {candidate_id: "0011", configuration_id: SL-R1-D256-Q11, parameterization: sublora, lora_rank: 1, intrinsic_dimension: 256, quantization_levels: 11, output_directory: runs/v6_compressibility/sl_r1_d256_q11}
+    - {candidate_id: "0101", configuration_id: SL-R1-D512-Q11, parameterization: sublora, lora_rank: 1, intrinsic_dimension: 512, quantization_levels: 11, output_directory: runs/v6_compressibility/sl_r1_d512_q11}
+    - {candidate_id: "0111", configuration_id: SL-R1-D1024-Q11, parameterization: sublora, lora_rank: 1, intrinsic_dimension: 1024, quantization_levels: 11, output_directory: runs/v6_compressibility/sl_r1_d1024_q11}
+    - {candidate_id: "1001", configuration_id: SL-R4-D256-Q11, parameterization: sublora, lora_rank: 4, intrinsic_dimension: 256, quantization_levels: 11, output_directory: runs/v6_compressibility/sl_r4_d256_q11}
+    - {candidate_id: "1011", configuration_id: SL-R4-D512-Q11, parameterization: sublora, lora_rank: 4, intrinsic_dimension: 512, quantization_levels: 11, output_directory: runs/v6_compressibility/sl_r4_d512_q11}
+    - {candidate_id: "1101", configuration_id: SL-R4-D1024-Q11, parameterization: sublora, lora_rank: 4, intrinsic_dimension: 1024, quantization_levels: 11, output_directory: runs/v6_compressibility/sl_r4_d1024_q11}
+
+training:
+  projector_constructor_seed: 20260813
+  seed: 20260817
+  sampler_seed: 20260817
+  epochs: 4
+  checkpoint_selection: final_epoch
+  optimizer: AdamW
+  learning_rate: 0.0004
+  betas: [0.9, 0.999]
+  epsilon: 1.0e-8
+  coordinate_weight_decay: 0.01
+  center_weight_decay: 0.0
+  scheduler: minimind_get_lr_pinned_commit
+  per_gpu_batch_size: 16
+  planned_world_size: 2
+  global_batch_size: 32
+  gradient_accumulation_steps: 1
+  gradient_clip_norm: 1.0
+  dtype: bfloat16
+  drop_last: true
+  dropout: 0.0
+  expected_steps_per_epoch: 35854
+  expected_total_steps: 143416
+
+qat:
+  enabled: true
+  final_fraction_numerator: 1
+  final_fraction_denominator: 10
+  qat_step_count_formula: ceil_total_steps_times_numerator_over_denominator
+  expected_qat_steps: 14342
+  expected_qat_start_step: 129074
+  center_parameter_dtype: float32
+  center_optimizer_state_at_qat_boundary: reset_to_empty_before_first_qat_update
+  initialization: deterministic_equal_width_bin_means_fp16_then_fp32
+  forward_assignment: nearest_center_fp32
+  tie_break: lowest_center_index
+  straight_through_coordinate_gradient: identity
+  learned_center_gradient: gathered_selected_centers
+  empty_center_update: unchanged_without_assignments
+  final_center_dtype: float16
+  final_assignment: nearest_fp16_center_in_fp64
+  recompute_assignments_after_fp16_cast: true
+
+description_length:
+  candidate_identity_code: fixed_length_4_bit_lookup_table
+  structure_choice_bits: 4
+  no_separate_method_rank_dimension_or_level_cost: true
+  symbol_code_upper_bound: ceil_d_times_empirical_entropy_plus_one
+  codebook_bits_per_center: 16
+  count_bits_per_symbol: ceil_log2_d_plus_one
+  prefix_length_code: elias_gamma_of_positive_raw_length
+  prefix_length_formula: C_raw+2*floor(log2(C_raw))+1
+
+certificate:
+  model_count: 9
+  shared_sample_required: true
+  reuse_any_existing_certificate_sample: false
+  sample_generation_timing: after_all_nine_q11_quantized_hypotheses_and_lengths_are_final
+  sample_size: 10000
+  sampling: uniform_with_replacement
+  sampling_seed_policy: fresh_os_csprng
+  delta_model: 0.025
+  delta_subsample_family_total: 0.025
+  per_model_subsample_correction: ln_9_over_delta_subsample
+  rank_alpha: 0.125
+
+evaluation:
+  canonical_prompt: Describe this image.
+  image_token_length: 64
+  max_sequence_length: 450
+  caption_policy: all_valid_assistant_captions
+  weighting: equal_token_then_equal_caption_then_equal_cluster
+  model_mode: eval
+  smoothing_dtype: float64_log_domain
+  heldout_validation_access_during_6a: prohibited
+
+execution_order:
+  - implement_and_test_arbitrary_tail_projection_and_qat
+  - run_development_only_two_gpu_smoke_tests
+  - freeze_v6_registry_contract_sources_and_smoke_hashes
+  - train_and_freeze_all_nine_q11_candidates_without_validation_access
+  - finalize_and_independently_verify_all_quantized_hypotheses
+  - draw_one_fresh_shared_certification_sample
+  - evaluate_all_nine_models_with_model_count_nine
+  - apply_preregistered_6a_success_rule
+  - conditionally_enter_posthoc_6b

@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "status": "q11_only_scope_revision_frozen_before_resume",
+  "revision_reason": "user_requested_compute_scope_reduction",
+  "revision_timing": "after_v6_formal_training_started_before_shared_certification_sampling",
+  "candidate_count": 9,
+  "model_count": 9,
+  "retained_quantization_levels": [11],
+  "removed_quantization_levels": [17],
+  "removed_artifacts_policy": "retain_as_historical_only_exclude_from_6a_and_6b",
+  "validation_results_consulted_for_revision": false,
+  "training_contract_registry_sha256": "d50d22174d5a0c9ccb9e19d9957d2143d9921cab530df949162bdfa99bb392ec",
+  "historical_v6_freeze_manifest_sha256": "04d64b5b1cd655270ed9d1508dda7ea39540c02739c30286895d129d35c99426",
+  "artifact_sha256": {
+    "方案.md": "400c5e511274757165711d4897c96f7c3ea9bd8a300a689e8a67d036ce8e7927",
+    "configs/experiment_registry_v6_compressibility.yaml": "c735a065d6e27e7d0d70ed0c8488f0287a996d7ffce802f1a252658ce1749201",
+    "configs/implementation_contract_v6_compressibility.json": "94bff0752a14b0125e7e62eec35fdc5f5e664ad96a45d89a69794ad5bd9d2f88",
+    "finalize_quantized_v6.py": "92f1e8b9e1fab679b61b3dec6f141e171e867f9d1fc198c7c70148774ae3ba47",
+    "minimind_v_bound/configuration_v6_compressibility.py": "d6a2653765bbce37f45f2b21bd0ea03526a43d667bbfd329622a12cb54ab07ad",
+    "supervise_v6_compressibility.py": "fbff7c6f2b2a47def459e40987e32bee34fb23249728cd6abacb7b31058c25bf",
+    "tests/test_v6_compressibility.py": "7907ada2a236c9f583fb2e2cc232c89587ef02e9976dd46ba8c3b1bedde7cdc8",
+    "train_compressibility_v6.py": "8532883594e7668619ad11bde3245abc4451a5e1e1550171b2b8cab31e1fe367",
+    "verify_quantized_v6.py": "b9270a0cebba4065f4756da500536d6e76d76bcc672de611046060413de11ab7",
+    "verify_v6_compressibility_protocol.py": "570a703454b2ff2a0bfc07cf314704331d604836723e80b46c397d0f7f9fc1d1"
+  }
+}
