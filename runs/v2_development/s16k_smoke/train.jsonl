@@ -1,1 +1,0 @@
-{"batch_in_epoch": 0, "configuration_id": "S-16K", "coordinate_sha256": "e5c3e83df967b99fcd33aca512bb9b6a82ec772e546da5585e4fa9c05b6d39bc", "epoch": 0, "global_step": 1, "gradient_norm_before_clip": 0.18111836910247803, "learning_rate": 0.0004, "loss_nats_per_token_rank0": 2.9366822242736816, "peak_cuda_memory_bytes_rank0": 3332524544, "seconds": 0.480828054016456}
