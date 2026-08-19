@@ -1,6 +1,11 @@
 # MiniMind-V Compression-Bound Experiments
 
-This repository contains the source, frozen contracts, and tests for the MiniMind-V projector compression-bound study. The active v6 scope is Q=11-only: nine frozen candidates (Projector Subspace and Projector-SubLoRA, dimensions 256/512/1024, with SubLoRA ranks 1/4) are trained, quantized, certified, and analyzed on held-out clusters. The Q=11 scope was revised after formal training had started, so the analysis is post hoc rather than a prospective confirmation. Checkpoints, downloaded models, raw data, caches, and run logs are intentionally excluded from Git.
+This repository contains the source, frozen contracts, tests, and compact result manifests for the MiniMind-V projector compression-bound study. The project is organized into two phases:
+
+1. **Phase 1 / Milestone 1:** train exactly one `S-4K` Projector Subspace model and complete the minimum train, quantize, certificate, and held-out evaluation loop.
+2. **Phase 2 / Milestone 6:** compare Projector Subspace and Projector-SubLoRA by selecting one lowest-bound representative from each method and checking whether bound ordering predicts raw held-out validation BPD ordering.
+
+The current Phase 2 scope is v6 Q=11-only with nine frozen candidates. Its Q=11 scope was revised after formal training had started, so that comparison is post hoc rather than a prospective confirmation. Checkpoints, downloaded models, raw data, caches, and large run logs are intentionally excluded from Git.
 
 ## Reproducible setup
 
@@ -29,6 +34,33 @@ dataset/clusters/image_clusters.sqlite3
 
 These large files are not included. Verify their SHA-256 values before running experiments.
 
+## Phase 1: S-4K minimum closed loop
+
+Phase 1 trains only the single configuration `S-4K`:
+
+```text
+parameterization: Projector Subspace
+intrinsic dimension: d_P = 4096
+quantization: Q_P = 11
+model count: 1
+```
+
+The Phase 1 contract is `configs/experiment_registry.yaml`. Its reproducible artifacts are under `runs/s4k_formal_v1/`, including the final checkpoint, quantized artifact, shared certificate sample, certificate manifest, independent verification report, and fixed held-out evaluation manifest. The Phase 1 scripts are:
+
+```text
+train_s4k.py
+quantize_final_s4k.py
+verify_quantized_s4k.py
+draw_certificate_sample.py
+evaluate_certificate_s4k.py
+verify_certificate_sample.py
+verify_certificate_result.py
+evaluate_locked_test_s4k.py
+verify_locked_test_result.py
+```
+
+Milestone 1 answers whether this single compression configuration can complete the full protocol. The frozen certificate bound is `5.798642` bits/token with `alpha=0.125`, and the fixed held-out evaluation reports raw empirical risk `4.223987` bits/token. This is a closed-loop validation of the S-4K implementation, not a comparison between compression methods.
+
 ## Protocol checks and experiments
 
 ```bash
@@ -36,7 +68,7 @@ python verify_v6_compressibility_protocol.py
 pytest -q tests/test_v6_compressibility.py
 ```
 
-The Q=11 training and quantization entry points are `train_compressibility_v6.py`, `finalize_quantized_v6.py`, and `verify_quantized_v6.py`. Certification uses `draw_shared_certificate_sample_v6.py` followed by `evaluate_certificate_v6.py`; held-out evaluation uses `evaluate_heldout_validation_v6.py`. Read `方案.md` and `configs/experiment_registry_v6_compressibility.yaml` for exact seeds, split rules, optimizer schedule, and arguments.
+The Phase 2 Q=11 training and quantization entry points are `train_compressibility_v6.py`, `finalize_quantized_v6.py`, and `verify_quantized_v6.py`. Certification uses `draw_shared_certificate_sample_v6.py` followed by `evaluate_certificate_v6.py`; held-out evaluation uses `evaluate_heldout_validation_v6.py`. Read `方案.md` and `configs/experiment_registry_v6_compressibility.yaml` for exact seeds, split rules, optimizer schedule, and arguments.
 
 ### Milestone 5: non-vacuous certificate validation
 
@@ -48,7 +80,7 @@ B_j < log2(V)
 
 It does not read held-out validation outputs and does not use validation to retrain, requantize, choose `alpha`, remove candidates, or change the candidate set. Its only purpose is to establish that the fixed candidate family produces non-empty generalization certificates.
 
-### Milestone 6: prediction across compression methods
+### Phase 2 / Milestone 6: prediction across compression methods
 
 After Milestone 5 is frozen, Milestone 6 selects the smallest-bound representative separately within Projector Subspace and Projector-SubLoRA. Only those two representatives are then evaluated on held-out validation clusters. The main question is whether the training-side bound ordering predicts the relative raw validation BPD ordering between the two compression methods. This is a descriptive post hoc Bound–Validation comparison, not validation-based model selection and not a proof that validation error is mathematically controlled.
 
