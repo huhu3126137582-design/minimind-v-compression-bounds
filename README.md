@@ -1,6 +1,6 @@
 # MiniMind-V Compression-Bound Experiments
 
-This repository contains the source, frozen contracts, and tests for the MiniMind-V projector compression-bound study. The published v6 scope is Q=11-only: nine pre-registered candidates (subspace and SubLoRA, dimensions 256/512/1024) are trained, quantized, certified, and optionally evaluated on held-out clusters. Checkpoints, downloaded models, raw data, caches, and run logs are intentionally excluded from Git.
+This repository contains the source, frozen contracts, and tests for the MiniMind-V projector compression-bound study. The active v6 scope is Q=11-only: nine frozen candidates (Projector Subspace and Projector-SubLoRA, dimensions 256/512/1024, with SubLoRA ranks 1/4) are trained, quantized, certified, and analyzed on held-out clusters. The Q=11 scope was revised after formal training had started, so the analysis is post hoc rather than a prospective confirmation. Checkpoints, downloaded models, raw data, caches, and run logs are intentionally excluded from Git.
 
 ## Reproducible setup
 
@@ -37,5 +37,28 @@ pytest -q tests/test_v6_compressibility.py
 ```
 
 The Q=11 training and quantization entry points are `train_compressibility_v6.py`, `finalize_quantized_v6.py`, and `verify_quantized_v6.py`. Certification uses `draw_shared_certificate_sample_v6.py` followed by `evaluate_certificate_v6.py`; held-out evaluation uses `evaluate_heldout_validation_v6.py`. Read `方案.md` and `configs/experiment_registry_v6_compressibility.yaml` for exact seeds, split rules, optimizer schedule, and arguments.
+
+### Milestone 5: non-vacuous certificate validation
+
+Milestone 5 uses the frozen training-side certificate for every one of the nine candidates to verify whether the bound is non-vacuous:
+
+```text
+B_j < log2(V)
+```
+
+It does not read held-out validation outputs and does not use validation to retrain, requantize, choose `alpha`, remove candidates, or change the candidate set. Its only purpose is to establish that the fixed candidate family produces non-empty generalization certificates.
+
+### Milestone 6: prediction across compression methods
+
+After Milestone 5 is frozen, Milestone 6 selects the smallest-bound representative separately within Projector Subspace and Projector-SubLoRA. Only those two representatives are then evaluated on held-out validation clusters. The main question is whether the training-side bound ordering predicts the relative raw validation BPD ordering between the two compression methods. This is a descriptive post hoc Bound–Validation comparison, not validation-based model selection and not a proof that validation error is mathematically controlled.
+
+The completed M6 representatives and metrics are recorded in `runs/v6_compressibility/m6_bound_validation_report.json`:
+
+| Method | Representative | Final bound | Raw validation BPD |
+| --- | --- | ---: | ---: |
+| Projector Subspace | `S-D256-Q11` | 5.037774 | 4.144036 |
+| Projector-SubLoRA | `SL-R1-D256-Q11` | 5.019882 | 4.113346 |
+
+All nine candidates are non-vacuous because their bounds are below `log2(6400) = 12.643856`. Projector-SubLoRA has both the lower bound and the lower raw validation BPD in this representative comparison, so the two directions agree. The held-out set had been opened during an earlier S-4K experiment; this result must therefore be reported as post hoc and descriptive.
 
 Held-out analysis is post hoc and must not be presented as prospective model selection. Reproduction requires the same frozen inputs and substantial disk space.

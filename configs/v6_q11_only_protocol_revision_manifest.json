@@ -12,7 +12,7 @@
   "training_contract_registry_sha256": "d50d22174d5a0c9ccb9e19d9957d2143d9921cab530df949162bdfa99bb392ec",
   "historical_v6_freeze_manifest_sha256": "04d64b5b1cd655270ed9d1508dda7ea39540c02739c30286895d129d35c99426",
   "artifact_sha256": {
-    "方案.md": "400c5e511274757165711d4897c96f7c3ea9bd8a300a689e8a67d036ce8e7927",
+    "方案.md": "2ca9a8074ce73bba4c195407c151d716b79dc76770b022370aa42d89ad5c086d",
     "configs/experiment_registry_v6_compressibility.yaml": "c735a065d6e27e7d0d70ed0c8488f0287a996d7ffce802f1a252658ce1749201",
     "configs/implementation_contract_v6_compressibility.json": "94bff0752a14b0125e7e62eec35fdc5f5e664ad96a45d89a69794ad5bd9d2f88",
     "finalize_quantized_v6.py": "92f1e8b9e1fab679b61b3dec6f141e171e867f9d1fc198c7c70148774ae3ba47",

@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "analysis_name": "M=9 Unified Analysis",
+  "protocol": "v6_q11_only",
+  "selection_rule": "Within each compression method, select the configuration with the smallest frozen final certificate bound; validation is post-selection only.",
+  "uniform_predictor_bound_bits_per_token": 12.643856189774725,
+  "main_results": [
+    {"configuration_id": "S-D256-Q11", "method": "Projector Subspace", "bound_bits_per_token": 5.03777448156617, "non_vacuous": true},
+    {"configuration_id": "S-D512-Q11", "method": "Projector Subspace", "bound_bits_per_token": 5.133204093827314, "non_vacuous": true},
+    {"configuration_id": "S-D1024-Q11", "method": "Projector Subspace", "bound_bits_per_token": 5.2809815230705714, "non_vacuous": true},
+    {"configuration_id": "SL-R1-D256-Q11", "method": "Projector-SubLoRA", "bound_bits_per_token": 5.019881737060663, "non_vacuous": true},
+    {"configuration_id": "SL-R1-D512-Q11", "method": "Projector-SubLoRA", "bound_bits_per_token": 5.147800482451875, "non_vacuous": true},
+    {"configuration_id": "SL-R1-D1024-Q11", "method": "Projector-SubLoRA", "bound_bits_per_token": 5.293887135282596, "non_vacuous": true},
+    {"configuration_id": "SL-R4-D256-Q11", "method": "Projector-SubLoRA", "bound_bits_per_token": 5.021495580950052, "non_vacuous": true},
+    {"configuration_id": "SL-R4-D512-Q11", "method": "Projector-SubLoRA", "bound_bits_per_token": 5.122086744017975, "non_vacuous": true},
+    {"configuration_id": "SL-R4-D1024-Q11", "method": "Projector-SubLoRA", "bound_bits_per_token": 5.2759270121486015, "non_vacuous": true}
+  ],
+  "bound_validation_comparison": [
+    {"method": "Projector Subspace", "configuration_id": "S-D256-Q11", "bound_bits_per_token": 5.03777448156617, "raw_validation_bpd_bits_per_token": 4.144035652828017, "non_vacuous": true},
+    {"method": "Projector-SubLoRA", "configuration_id": "SL-R1-D256-Q11", "bound_bits_per_token": 5.019881737060663, "raw_validation_bpd_bits_per_token": 4.113345818424158, "non_vacuous": true}
+  ],
+  "direction_result": {
+    "lower_bound_method": "Projector-SubLoRA",
+    "lower_raw_validation_bpd_method": "Projector-SubLoRA",
+    "directions_agree": true,
+    "interpretation": "Descriptive post-hoc Bound-Validation comparison; validation did not select, retrain, requantize, or alter alpha/candidate sets."
+  },
+  "source_manifests": {
+    "certificate_results_root": "runs/v6_compressibility/certificate_results",
+    "subspace_representative_validation": "runs/v6_compressibility/heldout_validation/s_d256_q11/manifest.json",
+    "sublora_representative_validation": "runs/v6_compressibility/heldout_validation/sl_r1_d256_q11/manifest.json"
+  }
+}
